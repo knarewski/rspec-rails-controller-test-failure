@@ -59,5 +59,5 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '= 6.0.0.rc1'
+  gem 'rspec-rails', '= 5.1.2'
 end
