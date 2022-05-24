@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    environment:
+      HISTFILE: /usr/src/app/tmp/.bash_history # Persists bash history between runs for devs convenience
+    stdin_open: true
+    tty: true
+    ports:
+      - '3000:3000'
+    volumes:
+      - ".:/usr/src/app"
