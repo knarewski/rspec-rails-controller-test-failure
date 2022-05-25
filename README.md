@@ -1,24 +1,11 @@
-# README
+## Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The following fails while it shouldn't:
+```bash
+docker-compose run --rm web bundle exec rspec
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The following passes as expected:
+```bash
+docker-compose run --rm web bundle exec rspec spec/controllers/woots_controller_spec.rb -e 'fails if invoked with the test above'
+```
